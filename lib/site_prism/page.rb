@@ -10,6 +10,11 @@ module SitePrism
       visit expanded_url
     end
 
+    def go(*args)
+      load *args
+      self
+    end
+
     def displayed?
       raise SitePrism::NoUrlMatcherForPage if url_matcher.nil?
       !(page.current_url =~ url_matcher).nil?

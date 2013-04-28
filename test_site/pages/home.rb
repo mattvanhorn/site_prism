@@ -12,6 +12,7 @@ class TestHomePage < SitePrism::Page
   element :shy_element, 'input#will_become_visible'
   element :retiring_element, 'input#will_become_invisible'
   element :remove_container_with_element_btn, 'input#remove_container_with_element'
+  element :some_text_field, 'input#fill_me_in'
 
   #elements groups
   elements :lots_of_links, :xpath, '//td//a'
@@ -30,5 +31,10 @@ class TestHomePage < SitePrism::Page
 
   #iframes
   iframe :my_iframe, MyIframe, '#the_iframe'
+
+  def do_something
+    # interact with elements...
+    some_text_field.set 'foobar'
+  end
 end
 

@@ -29,3 +29,11 @@ When /^I navigate to the section experiments page$/ do
   @test_site.section_experiments.load
 end
 
+When(/^I go do something on the home page$/) do
+  @home_page = TestSite.new.home
+  @home_page.go.do_something
+end
+
+Then(/^the text field on the home page is filled$/) do
+  @home_page.some_text_field.value.should == 'foobar'
+end

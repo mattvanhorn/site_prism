@@ -5,6 +5,20 @@ describe SitePrism::Page do
     SitePrism::Page.new.should respond_to :load
   end
 
+  describe '#go' do
+    it "delegates to load" do
+      page = SitePrism::Page.new
+      page.should_receive(:load)
+      page.go
+    end
+
+    it "allows chaining" do
+      page = SitePrism::Page.new
+      page.stub(:load)
+      page.go.should == page
+    end
+  end
+
   it "should respond to set_url" do
     SitePrism::Page.should respond_to :set_url
   end
