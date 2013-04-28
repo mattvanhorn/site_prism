@@ -15,6 +15,10 @@ class TestSite
     TestPageWithPeople.new
   end
 
+  def page_with_message
+    TestPageWithMessage.new
+  end
+
   def section_experiments
     TestSectionExperiments.new
   end

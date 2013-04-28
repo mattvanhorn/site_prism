@@ -3,6 +3,7 @@ module SitePrism
     include Capybara::DSL
     include ElementChecker
     extend ElementContainer
+    include MessageContainer
 
     def load(expansion = {})
       expanded_url = url(expansion)
@@ -65,6 +66,14 @@ module SitePrism
 
     def element_does_not_exist? *find_args
       has_no_selector? *find_args
+    end
+
+    def message_exists?(text)
+      has_text? text
+    end
+
+    def message_does_not_exist?(text)
+      has_no_text? text
     end
   end
 end

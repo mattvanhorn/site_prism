@@ -24,6 +24,7 @@ require 'pages/home'
 require 'pages/dynamic_page'
 require 'pages/no_title'
 require 'pages/page_with_people'
+require 'pages/page_with_message'
 require 'pages/section_experiments'
 
 Capybara.configure do |config|
